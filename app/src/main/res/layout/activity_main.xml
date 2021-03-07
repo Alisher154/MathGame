@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#03A9F4">
+
+
+    <TextView
+        android:id="@+id/levels"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="28sp"
+        android:text="0"
+        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/variant"
+        android:layout_margin="36dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/cns">
+        <TextView
+            android:id="@+id/firstOp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/operator"
+            app:layout_constraintTop_toTopOf="@id/operator"
+            android:text="15"
+            android:textSize="50sp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/operator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textSize="50sp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/secoondOp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/operator"
+            app:layout_constraintTop_toTopOf="@id/operator"
+            android:textSize="50sp"
+            android:text="25"
+            android:textColor="@color/black"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cns"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline4"
+        app:layout_constraintVertical_bias="0.0"
+        >
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gd1"
+        android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        android:orientation="horizontal"
+          app:layout_constraintGuide_percent="0.5"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gd2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
+        <Button
+            android:text="C"
+            android:id="@+id/varC"
+            style="@style/variant"
+            app:layout_constraintTop_toTopOf="@id/gd1"
+            app:layout_constraintEnd_toEndOf="@id/gd2"
+            android:onClick="onClick"
+            />
+
+        <Button
+            android:text="D"
+            android:id="@+id/varD"
+            style="@style/variant"
+            app:layout_constraintTop_toTopOf="@id/gd1"
+            app:layout_constraintStart_toStartOf="@id/gd2"
+            android:onClick="onClick"
+            />
+
+        <Button
+            android:text="B"
+            android:id="@+id/varB"
+            style="@style/variant"
+            app:layout_constraintStart_toStartOf="@id/gd2"
+            app:layout_constraintBottom_toBottomOf="@id/gd1"
+            android:onClick="onClick"
+            />
+
+        <Button
+            android:text="A"
+            style="@style/variant"
+            android:id="@+id/varA"
+            app:layout_constraintBottom_toBottomOf="@id/gd1"
+            app:layout_constraintEnd_toEndOf="@id/gd2"
+            android:onClick="onClick"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
